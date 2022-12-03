@@ -27,29 +27,57 @@ struct FindLocation<CourtView : View, GenericViewModal : View>: View {
                 ScrollView(.horizontal){
                     HStack{
                         HStack{
-                            NavigationLink(destination: {
-                                FirstView
-                            }, label: {
-                                RoundedRectangle(cornerRadius: 20).frame(width:400,height: 180).foregroundColor(.black)
-                                    .overlay(
+                            RoundedRectangle(cornerRadius: 20).frame(width:400,height: 180).foregroundColor(.black)
+                                .overlay {
+                                    VStack{
+                                        Spacer()
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .overlay(Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed porta ").foregroundColor(.red)
+                                                .font(.system(size:15)))
+                                            .foregroundColor(.white)
+                                            .frame(width:270)
                                         VStack{
-                                            VStack{
-                                                Text("asdasas")
-                                                    .font(.system(size:30).bold())
-                                                    .foregroundColor(.white).background(RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width:150,height: 40))
-                                            }.offset(y:50)})
-                            })
+                                            NavigationLink(destination: {
+                                                FirstView
+                                            }, label: {
+                                                VStack{
+                                                    VStack{
+                                                        Text("FirstView")
+                                                            .font(.system(size:30).bold())
+                                                            .foregroundColor(.white).background(RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width:150,height: 40))
+                                                    }
+                                                    .padding(.vertical)
+                                                }
+                                            })
+                                        }
+                                    }
+                                }
                         }
                         HStack{
                             RoundedRectangle(cornerRadius: 20).frame(width:400,height: 180).foregroundColor(.black)
                                 .overlay{
-                                    NavigationLink(destination: {
-                                        SecondView
-                                    }, label: {
-                                        Text("as").font(.system(size: 30).bold())
-                                            .foregroundColor(.white).background(RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width:120,height: 80))
-                                        
-                                    })
+                                    VStack{
+                                        Spacer()
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .overlay(Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed porta ").foregroundColor(.red)
+                                                .font(.system(size:15)))
+                                            .foregroundColor(.white)
+                                            .frame(width:270)
+                                        VStack{
+                                            NavigationLink(destination: {
+                                                SecondView
+                                            }, label: {
+                                                VStack{
+                                                    VStack{
+                                                        Text("Second View")
+                                                            .font(.system(size:30).bold())
+                                                            .foregroundColor(.white).background(RoundedRectangle(cornerRadius: 10).fill(Color.red).frame(width:190,height: 40))
+                                                    }
+                                                    .padding(.vertical)
+                                                }
+                                            })
+                                        }
+                                    }
                                 }
                         }
                     }.padding(.horizontal,2)
