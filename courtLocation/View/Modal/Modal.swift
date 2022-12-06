@@ -25,8 +25,20 @@ struct LocationInfos : Identifiable{
     var ButtonLoc : String
     let id = UUID()
 }
+
 extension LocationInfos{
     static let details = [LocationInfos(courtDetailName: "Topselvi Halisaha",courtInfo: "sldkmflsdmflsdkmflksdf",ButtonLoc: "sa"),LocationInfos(courtDetailName: "Saas halisaha",courtInfo: "SDLFMLDSMFLSDKF",ButtonLoc: "as")]
 }
+
+struct UserComments : Identifiable{
+    var id : UUID = UUID()
+    var UserComment : String
+    var userPoint : Int
+    var userName : String
+}
+extension UserComments{
+    static let userFeedback = [UserComments(UserComment: "fena saha ", userPoint: 10, userName: "Icardi"),UserComments(UserComment: "fena saha ", userPoint: 10, userName: "Fatih Terim"),UserComments(UserComment: "fena saha ", userPoint: 10, userName: "Icardi"),UserComments(UserComment: "fena saha ", userPoint: 10, userName: "Kerem")]
+}
+
 /*Neighbourhood(name: "Topselvi Halisaha", coordinates: CLLocationCoordinate2D(latitude: 40.895472, longitude: 29.218077)),
  Neighbourhood(name: "Arena Halisaha", coordinates: CLLocationCoordinate2D(latitude: 40.895492, longitude: 29.2114841))]*/

@@ -10,8 +10,10 @@ class CourtItemModal : ObservableObject{
     init(){
         CourtItems = LocationModal.annonitions
         CourtDetails = LocationInfos.details
+        userDef = UserComments.userFeedback
     }
     @Published var CourtItems : [LocationModal]
     @Published var CourtDetails : [LocationInfos]
+    @Published var userDef : [UserComments]
 
 }
