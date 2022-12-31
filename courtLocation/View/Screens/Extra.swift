@@ -18,8 +18,10 @@ struct ArenaView : View {
     var body: some View {
         VStack{
             VStack{
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 200,height: 200, alignment: .center)
+                Image("Pitch1")
+                    .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .frame(width: UIScreen.main.bounds.width/2)
             }.padding(.vertical,50)
             VStack{
                 VStack{
@@ -60,7 +62,7 @@ struct ArenaView : View {
                 
                 VStack{
                     
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius:50).padding()
                         .frame(width:.infinity,height: UIScreen.main.bounds.height/3)
                         .foregroundColor(.gray)
                         .overlay {
@@ -75,15 +77,17 @@ struct ArenaView : View {
                                                 Text("Saha Sahibi:")
                                                 Text(infos.ownerName)
                                                     .bold()
-                                                Spacer()
-                                            }.padding()
+                                            }.padding(.horizontal,-120)
                                             HStack{
                                                 Text("Saha Numarasi:")
                                                 Text("\(infos.ownerNumber)")
                                                     .bold()
-                                                Spacer()
                                             }.padding()
-                                        }.background(RoundedRectangle(cornerRadius: 20).fill(Color.white)).padding()
+                                            HStack{
+                                                Text("Stars:")
+                                                Image(systemName:"star")
+                                            }.padding(.horizontal,-120)
+                                        }.background(RoundedRectangle(cornerRadius: 10).fill(Color.white)).padding()
                                     }.padding(.vertical)
                                     Spacer()
                                     
